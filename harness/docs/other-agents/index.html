@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+        href="/harness/assets/fonts/big-shoulders-display-800.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+        href="/harness/assets/fonts/ibm-plex-sans-400.woff2">
+
+  <link rel="stylesheet" href="/harness/assets/css/site.css">
+
+  <link rel="icon" type="image/svg+xml" href="/harness/assets/img/favicon.svg">
+  <link rel="alternate icon" href="/harness/assets/img/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/harness/assets/img/apple-touch-icon.png">
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Other coding agents | addit-harness</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Other coding agents" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="AGENTS.md is the single canonical source — every tool’s config is generated from it (plus rules/, references/, agents/). Claude Code has its own plugin/marketplace path (see Getting started); Cursor, Kiro, and Codex CLI are synced by install.sh + sync_tools.py instead, driven by the declarative mapping in tools.config.json." />
+<meta property="og:description" content="AGENTS.md is the single canonical source — every tool’s config is generated from it (plus rules/, references/, agents/). Claude Code has its own plugin/marketplace path (see Getting started); Cursor, Kiro, and Codex CLI are synced by install.sh + sync_tools.py instead, driven by the declarative mapping in tools.config.json." />
+<link rel="canonical" href="https://tools.addit.digital/harness/docs/other-agents/" />
+<meta property="og:url" content="https://tools.addit.digital/harness/docs/other-agents/" />
+<meta property="og:site_name" content="addit-harness" />
+<meta property="og:image" content="https://tools.addit.digital/harness/assets/img/og-card.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-07-11T10:01:40+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://tools.addit.digital/harness/assets/img/og-card.png" />
+<meta property="twitter:title" content="Other coding agents" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-07-11T10:01:40+00:00","datePublished":"2026-07-11T10:01:40+00:00","description":"AGENTS.md is the single canonical source — every tool’s config is generated from it (plus rules/, references/, agents/). Claude Code has its own plugin/marketplace path (see Getting started); Cursor, Kiro, and Codex CLI are synced by install.sh + sync_tools.py instead, driven by the declarative mapping in tools.config.json.","headline":"Other coding agents","image":"https://tools.addit.digital/harness/assets/img/og-card.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://tools.addit.digital/harness/docs/other-agents/"},"url":"https://tools.addit.digital/harness/docs/other-agents/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav">
+  <div class="wrap nav-row">
+    <div class="wordmark">
+      <a class="wordmark-addit" href="https://tools.addit.digital/"><span class="dot"></span>addit</a>
+      <a class="wordmark-harness" href="/harness/">/ harness</a>
+    </div>
+    <nav class="links" aria-label="Primary">
+      <a href="/harness/#compare">Why</a>
+      <a href="/harness/#features">Features</a>
+      <a href="/harness/#install">Install</a>
+      <a href="https://github.com/addit-digital/addit-harness" class="btn btn-ghost">
+        <svg class="icon-gh" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"></path></svg>
+        GitHub
+      </a>
+      <a href="/harness/docs/getting-started/" class="btn btn-primary">Docs →</a>
+    </nav>
+  </div>
+</header>
+
+
+  <main id="main" class="docs-shell">
+  <div class="wrap docs-grid">
+    <aside class="docs-sidebar">
+      <details class="docs-nav-disclosure">
+        <summary class="docs-nav-toggle">Docs menu</summary>
+        
+
+<nav aria-label="Documentation" class="docs-nav">
+  
+    
+    
+      <div class="docs-nav-group">
+        <p class="docs-nav-heading">Start</p>
+        <ul>
+          
+            <li>
+              
+                <a href="/harness/docs/getting-started/">Getting started</a>
+              
+            </li>
+          
+            <li>
+              
+                <a href="/harness/docs/concepts/">Concepts</a>
+              
+            </li>
+          
+        </ul>
+      </div>
+    
+  
+    
+    
+      <div class="docs-nav-group">
+        <p class="docs-nav-heading">Reference</p>
+        <ul>
+          
+            <li>
+              
+                <a href="/harness/docs/subagents/">Subagents</a>
+              
+            </li>
+          
+            <li>
+              
+                <a href="/harness/docs/skills-commands/">Skills & commands</a>
+              
+            </li>
+          
+            <li>
+              
+                <a href="/harness/docs/model-cost/">Model & cost</a>
+              
+            </li>
+          
+            <li>
+              
+                <a href="/harness/docs/mcp/">Enabling MCP</a>
+              
+            </li>
+          
+            <li>
+              
+                <a href="/harness/docs/other-agents/" aria-current="page">Other coding agents</a>
+              
+            </li>
+          
+        </ul>
+      </div>
+    
+  
+    
+    
+      <div class="docs-nav-group">
+        <p class="docs-nav-heading">Guides</p>
+        <ul>
+          
+            <li>
+              
+                <a href="/harness/docs/use-cases/">Use cases</a>
+              
+            </li>
+          
+            <li>
+              
+                <a href="/harness/docs/extending/">Extending</a>
+              
+            </li>
+          
+        </ul>
+      </div>
+    
+  
+    
+    
+      <div class="docs-nav-group">
+        <p class="docs-nav-heading">Project</p>
+        <ul>
+          
+            <li>
+              
+                <a href="/harness/docs/roadmap/">Roadmap</a>
+              
+            </li>
+          
+            <li>
+              
+                <a href="/harness/docs/changelog/">Changelog</a>
+              
+            </li>
+          
+        </ul>
+      </div>
+    
+  
+</nav>
+
+      </details>
+    </aside>
+
+    <div class="docs-content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/harness/">Harness</a></li>
+    <li><a href="/harness/docs/getting-started/">Docs</a></li>
+    <li aria-current="page">Other coding agents</li>
+  </ol>
+</nav>
+
+
+      <article class="docs-article">
+        <h1>Other coding agents</h1>
+        <p><code class="language-plaintext highlighter-rouge">AGENTS.md</code> is the single canonical source — every tool’s config is
+generated from it (plus <code class="language-plaintext highlighter-rouge">rules/</code>, <code class="language-plaintext highlighter-rouge">references/</code>, <code class="language-plaintext highlighter-rouge">agents/</code>). Claude Code has
+its own plugin/marketplace path (see <a href="../getting-started/">Getting started</a>);
+Cursor, Kiro, and Codex CLI are synced by <code class="language-plaintext highlighter-rouge">install.sh</code> + <code class="language-plaintext highlighter-rouge">sync_tools.py</code>
+instead, driven by the declarative mapping in <code class="language-plaintext highlighter-rouge">tools.config.json</code>.</p>
+
+<h2 id="install">Install</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone &lt;this-repo&gt; ~/src/addit-harness <span class="o">&amp;&amp;</span> <span class="nb">cd</span> ~/src/addit-harness
+./install.sh              <span class="c"># auto-detect: sync every supported agent found on this machine</span>
+./install.sh <span class="nt">--target</span> X   <span class="c"># force one: claude|cursor|kiro|codex</span>
+./install.sh <span class="nt">--link</span>       <span class="c"># symlink instead of copy, so edits track git</span>
+./install.sh <span class="nt">--plugins</span>    <span class="c"># claude only: also register marketplaces + install official plugins</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">install.sh</code> checks each tool’s CLI on <code class="language-plaintext highlighter-rouge">PATH</code> or home directory
+(<code class="language-plaintext highlighter-rouge">~/.cursor</code>, <code class="language-plaintext highlighter-rouge">~/.kiro</code>, <code class="language-plaintext highlighter-rouge">~/.codex</code>) and syncs config into whichever it
+finds. It merges per-file into each tool’s home, never clobbering the whole
+directory, so <code class="language-plaintext highlighter-rouge">projects/</code>, history, and existing hooks are preserved.
+Re-running backs up anything it replaces to
+<code class="language-plaintext highlighter-rouge">&lt;tool-home&gt;/.install-backups/&lt;timestamp&gt;/</code>.</p>
+
+<p>Claude Code is no longer synced by a plain <code class="language-plaintext highlighter-rouge">./install.sh</code> run (it uses the
+plugin path); <code class="language-plaintext highlighter-rouge">--target claude</code> still works if you’d rather use the
+copy-based install — it backs up and replaces <code class="language-plaintext highlighter-rouge">~/.claude/settings.json</code> too,
+so merge any custom permissions/hooks back from the backup.</p>
+
+<h2 id="cursor">Cursor</h2>
+
+<ul>
+  <li>Baseline: <code class="language-plaintext highlighter-rouge">~/.cursor/rules/global.mdc</code> (<code class="language-plaintext highlighter-rouge">alwaysApply</code>)</li>
+  <li>Language conventions: <code class="language-plaintext highlighter-rouge">~/.cursor/rules/*.mdc</code> (<code class="language-plaintext highlighter-rouge">globs</code>)</li>
+  <li>Subagents: Cursor 2.4+ reads <code class="language-plaintext highlighter-rouge">~/.claude/agents/*.md</code> natively — <strong>only if
+that directory is populated.</strong> Plugin-only Claude Code installs no longer
+write there; run <code class="language-plaintext highlighter-rouge">install.sh --target claude</code> (or a future Cursor-native
+plugin, see <a href="../roadmap/">Roadmap</a>) if you want Cursor to pick these up too.</li>
+</ul>
+
+<h2 id="kiro">Kiro</h2>
+
+<ul>
+  <li>Baseline: <code class="language-plaintext highlighter-rouge">~/.kiro/steering/global.md</code> (<code class="language-plaintext highlighter-rouge">inclusion: always</code>)</li>
+  <li>Language conventions: <code class="language-plaintext highlighter-rouge">~/.kiro/steering/*.md</code> (<code class="language-plaintext highlighter-rouge">inclusion: fileMatch</code>)</li>
+  <li>Subagents: <code class="language-plaintext highlighter-rouge">~/.kiro/agents/*.md</code> — tool names remapped to Kiro’s category
+tags (<code class="language-plaintext highlighter-rouge">read</code>/<code class="language-plaintext highlighter-rouge">write</code>/<code class="language-plaintext highlighter-rouge">shell</code>/<code class="language-plaintext highlighter-rouge">web</code>/…).</li>
+</ul>
+
+<h2 id="codex-cli">Codex CLI</h2>
+
+<ul>
+  <li>Baseline: <code class="language-plaintext highlighter-rouge">~/.codex/AGENTS.md</code> (native filename, no rename needed)</li>
+  <li>Language conventions: folded into the same <code class="language-plaintext highlighter-rouge">AGENTS.md</code></li>
+  <li>Subagents: <code class="language-plaintext highlighter-rouge">~/.codex/agents/*.toml</code> — converted to TOML; tool-restriction
+becomes a derived <code class="language-plaintext highlighter-rouge">sandbox_mode</code> (<code class="language-plaintext highlighter-rouge">read-only</code> vs <code class="language-plaintext highlighter-rouge">workspace-write</code>), since
+Codex has no per-tool allowlist.</li>
+</ul>
+
+<h2 id="per-tool-coverage">Per-tool coverage</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tool</th>
+      <th>Baseline (<code class="language-plaintext highlighter-rouge">AGENTS.md</code> + engineering loop)</th>
+      <th>Language conventions</th>
+      <th>Subagents (<code class="language-plaintext highlighter-rouge">agents/*.md</code>)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Claude Code</strong></td>
+      <td>Plugin: <code class="language-plaintext highlighter-rouge">agents/</code>/<code class="language-plaintext highlighter-rouge">skills/</code> auto-discovered. <code class="language-plaintext highlighter-rouge">/addit-harness:setup</code>: <code class="language-plaintext highlighter-rouge">~/.claude/CLAUDE.md</code> (<code class="language-plaintext highlighter-rouge">@import</code>)</td>
+      <td><code class="language-plaintext highlighter-rouge">/addit-harness:setup</code>: <code class="language-plaintext highlighter-rouge">~/.claude/rules/*.md</code> (auto-load via <code class="language-plaintext highlighter-rouge">paths:</code>)</td>
+      <td>Plugin, auto-discovered — invoke as <code class="language-plaintext highlighter-rouge">@addit-harness:&lt;name&gt;</code></td>
+    </tr>
+    <tr>
+      <td><strong>Cursor</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">~/.cursor/rules/global.mdc</code> (<code class="language-plaintext highlighter-rouge">alwaysApply</code>)</td>
+      <td><code class="language-plaintext highlighter-rouge">~/.cursor/rules/*.mdc</code> (<code class="language-plaintext highlighter-rouge">globs</code>)</td>
+      <td>Reads <code class="language-plaintext highlighter-rouge">~/.claude/agents/*.md</code> natively (2.4+), only if populated</td>
+    </tr>
+    <tr>
+      <td><strong>Kiro</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">~/.kiro/steering/global.md</code> (<code class="language-plaintext highlighter-rouge">inclusion: always</code>)</td>
+      <td><code class="language-plaintext highlighter-rouge">~/.kiro/steering/*.md</code> (<code class="language-plaintext highlighter-rouge">inclusion: fileMatch</code>)</td>
+      <td><code class="language-plaintext highlighter-rouge">~/.kiro/agents/*.md</code>, remapped tool names</td>
+    </tr>
+    <tr>
+      <td><strong>Codex CLI</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">~/.codex/AGENTS.md</code></td>
+      <td>folded into the same <code class="language-plaintext highlighter-rouge">AGENTS.md</code></td>
+      <td><code class="language-plaintext highlighter-rouge">~/.codex/agents/*.toml</code></td>
+    </tr>
+    <tr>
+      <td><strong>GitHub Copilot</strong></td>
+      <td><em>(planned — see <a href="../roadmap/">Roadmap</a>)</em></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Vendored prose that hardcodes a <code class="language-plaintext highlighter-rouge">~/.claude/references/...</code> path (e.g.
+<code class="language-plaintext highlighter-rouge">rules/go.md</code>) is rewritten per tool to that tool’s own reference path
+(<code class="language-plaintext highlighter-rouge">~/.cursor/references/...</code>, etc.) so the pointer actually resolves.</p>
+
+<h2 id="mcp-is-not-auto-synced">MCP is not auto-synced</h2>
+
+<p><code class="language-plaintext highlighter-rouge">mcp.example.json</code> is a disabled, human-curated catalogue by design — pick an
+entry, fill in credentials by hand, and paste it into the tool’s real MCP
+config yourself (<code class="language-plaintext highlighter-rouge">install.sh</code>’s footer prints the right target path per tool
+after every run). See <a href="../mcp/">Enabling MCP</a> for the Claude Code specifics.</p>
+
+<h2 id="skills">Skills</h2>
+
+<p>Skills (<code class="language-plaintext highlighter-rouge">/adr</code>, <code class="language-plaintext highlighter-rouge">/save-plan</code>, etc.) are placed as files for the other tools
+today, but porting them with correct per-tool invocation semantics (Cursor
+commands, Kiro manual steering, Codex prompts, Copilot prompt files) is
+planned, not yet implemented — see <a href="../roadmap/">Roadmap</a>.</p>
+
+<h2 id="next">Next</h2>
+
+<ul>
+  <li><a href="../getting-started/">Getting started</a> — the Claude Code plugin path.</li>
+  <li><a href="../roadmap/">Roadmap</a> — native plugin packaging for these three tools.</li>
+</ul>
+
+      </article>
+
+      
+
+
+<nav class="docs-prev-next" aria-label="Docs pages">
+  
+  
+    
+    <a class="docs-prev-next-link prev" href="/harness/docs/mcp/">
+      <span class="docs-prev-next-label">← Previous</span>
+      <span class="docs-prev-next-title">Enabling MCP</span>
+    </a>
+  
+  
+  
+    
+    <a class="docs-prev-next-link next" href="/harness/docs/use-cases/">
+      <span class="docs-prev-next-label">Next →</span>
+      <span class="docs-prev-next-title">Use cases</span>
+    </a>
+  
+</nav>
+
+
+      <p class="docs-edit">
+        <a href="https://github.com/addit-digital/addit-harness/blob/main/site/_docs/other-agents.md">Edit this page on GitHub ↗</a>
+      </p>
+    </div>
+  </div>
+</main>
+
+
+  <footer>
+  <div class="wrap footer-row">
+    <nav class="footer-links" aria-label="Footer">
+      <a href="https://github.com/addit-digital/addit-harness">
+        <svg class="icon-gh" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"></path></svg>
+        GitHub
+      </a>
+      <a href="/harness/docs/getting-started/">Docs</a>
+      <a href="/harness/docs/roadmap/">Roadmap</a>
+      <a href="https://github.com/addit-digital/addit-harness/blob/main/CONTRIBUTING.md">Contributing</a>
+      <a href="https://github.com/addit-digital/addit-harness/blob/main/LICENSE">MIT License</a>
+      <a href="https://tools.addit.digital/">part of addit tools ↗</a>
+    </nav>
+    <div class="footer-meta">addit-harness · dev</div>
+  </div>
+</footer>
+
+
+  <script src="/harness/assets/js/copy.js" defer></script>
+</body>
+</html>
