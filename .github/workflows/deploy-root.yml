@@ -1,0 +1,42 @@
+name: Deploy hub root
+
+# Publishes this repo's hand-authored root files (index.html, 404.html,
+# robots.txt, CNAME, assets/) to the gh-pages branch that GitHub Pages
+# actually serves. gh-pages also carries each tool's subfolder (e.g.
+# harness/), published independently by that tool's own CI — this workflow
+# must never touch those. keep_files: true is what prevents that; without
+# it, actions-gh-pages wipes the whole branch before publishing.
+#
+# See addit-harness's docs/plans/2026-07-11-harness-website.md, Phase 4.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "index.html"
+      - "404.html"
+      - "robots.txt"
+      - "CNAME"
+      - "assets/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Publish root files to gh-pages
+        uses: peaceiris/actions-gh-pages@1ef5a1b1df4c63fe21a2242edbee6cac921ece01 # v4.1.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
+          publish_branch: gh-pages
+          keep_files: true
+          exclude_assets: ".github"
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
+          commit_message: "deploy hub root files"

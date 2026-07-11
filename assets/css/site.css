@@ -1,0 +1,236 @@
+/* addit-tools-web — hub root (tools.addit.digital)
+ * Minimal directory page + 404. Design tokens ported verbatim from
+ * addit-harness's site.scss for brand consistency across the hub and its
+ * tool subfolders (see addit-harness's docs/plans/2026-07-11-harness-website.md).
+ * Deliberately small in scope — this page's only job is to not be a dead
+ * link at the domain root; a richer hub design is out of scope until a
+ * second tool exists (see that plan's "Out of scope" section).
+ *
+ * baseurl: this repo has none (it IS the domain root), so plain root-
+ * relative paths are correct here — unlike a tool subfolder under it.
+ */
+
+@font-face {
+  font-family: 'Big Shoulders Display';
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/big-shoulders-display-800.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/ibm-plex-sans-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/ibm-plex-sans-600.woff2') format('woff2');
+}
+
+:root {
+  --ground: #14161a;
+  --surface: #1b1e22;
+  --ink: #ece7de;
+  --ink-dim: #9a9e9e;
+  --accent: #dd9548;
+  --accent-ink: #1b1206;
+  --accent-soft: rgba(221, 149, 72, 0.14);
+  --line: rgba(236, 231, 222, 0.12);
+  --line-strong: rgba(236, 231, 222, 0.22);
+  --radius: 3px;
+  --font-display: 'Big Shoulders Display', 'Arial Narrow', sans-serif;
+  --font-body: 'IBM Plex Sans', -apple-system, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', monospace;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --ground: #eef0ee;
+    --surface: #ffffff;
+    --ink: #14161a;
+    --ink-dim: #53585a;
+    --accent: #b0651c;
+    --accent-ink: #fff8ef;
+    --accent-soft: rgba(176, 101, 28, 0.10);
+    --line: rgba(20, 22, 26, 0.12);
+    --line-strong: rgba(20, 22, 26, 0.24);
+  }
+}
+
+* { box-sizing: border-box; }
+html { color-scheme: light dark; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: var(--accent); color: var(--accent-ink); }
+a { color: inherit; }
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--accent);
+  color: var(--accent-ink);
+  padding: 10px 16px;
+  z-index: 100;
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+.skip-link:focus { left: 12px; top: 12px; }
+
+a:focus-visible,
+.card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 28px;
+  width: 100%;
+}
+
+header.nav {
+  border-bottom: 1px solid var(--line);
+}
+.nav-row {
+  display: flex;
+  align-items: center;
+  height: 64px;
+}
+.wordmark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: var(--ink);
+}
+.wordmark .dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+main { flex: 1; }
+
+.hero {
+  padding: 72px 0 48px;
+}
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 16px;
+}
+h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(32px, 5vw, 44px);
+  line-height: 1.05;
+  text-transform: uppercase;
+  margin: 0 0 16px;
+  text-wrap: balance;
+}
+.lede {
+  font-size: 17px;
+  color: var(--ink-dim);
+  max-width: 52ch;
+  margin: 0;
+}
+
+.tools {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 72px;
+}
+.card {
+  display: block;
+  background: var(--surface);
+  padding: 24px 26px;
+  text-decoration: none;
+  color: inherit;
+  transition: background-color .15s ease;
+}
+.card:hover { background: var(--accent-soft); }
+.card-name {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.card-name::after { content: " →"; }
+.card-desc {
+  font-size: 14.5px;
+  color: var(--ink-dim);
+  margin: 0;
+  max-width: 58ch;
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 28px 0;
+}
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 13px;
+}
+.footer-links { display: flex; gap: 20px; }
+.footer-links a { text-decoration: none; color: var(--ink-dim); }
+.footer-links a:hover { color: var(--accent); }
+.footer-meta { font-family: var(--font-mono); color: var(--ink-dim); }
+
+/* 404 page */
+.not-found {
+  padding: 96px 0;
+  text-align: center;
+}
+.not-found .eyebrow { justify-content: center; }
+.not-found h1 { font-size: clamp(40px, 8vw, 64px); }
+.not-found .lede { margin: 0 auto 32px; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 12px 20px;
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: var(--accent-ink);
+  text-decoration: none;
+}
+.btn:hover { filter: brightness(1.08); }
