@@ -20,7 +20,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write # required — peaceiris/actions-gh-pages pushes the gh-pages branch
 
 jobs:
   publish:
